@@ -4,6 +4,8 @@ FROM python:3.11-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Ensure Python output is immediately visible in logs
+ENV PYTHONUNBUFFERED=1
 # Copy just the requirements.txt first to leverage Docker cache
 COPY requirements.txt .
 
